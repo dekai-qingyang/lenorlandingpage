@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Odbierz próbkę Lenor</title>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1064543255284514');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1064543255284514&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://scontent-hkg4-2.xx.fbcdn.net/v/t45.1600-4/509440981_1241818670680005_2095496584067042502_n.jpg?stp=cp0_dst-jpg_fr_q75_spS444_tt6&_nc_cat=103&ccb=1-7&_nc_sid=c02adf&_nc_ohc=uhJ85Q4y1pwQ7kNvwGFAIa8&_nc_oc=AdnuMN0vn8LnrO9md1SzjaJtVyRZicYQXOhh9Oe3gAzPGBQY3fAEvugQGfWyQdufUkA&_nc_zt=1&_nc_ht=scontent-hkg4-2.xx&_nc_gid=Dc2nwoUQ42H_xz4vq4ATGQ&oh=00_AfWVeOhJeD6aHL02YXVRI7FBHVYBH6NJKMQPr3S_irDGZg&oe=689C9F66');
+      background-size: cover;
+      background-position: center;
+      color: black;
+    }
+
+    .banner {
+      background-color: #000;
+      color: #fff;
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.92);
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .question {
+      margin: 30px 0;
+    }
+
+    .question p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .buttons button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background-color: #45a049;
+    }
+
+    #thankyou, #cta {
+      display: none;
+      margin-top: 30px;
+    }
+
+    #thankyou p {
+      font-size: 18px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    #cta a {
+      background-color: #FF5722;
+      color: white;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    #cta a:hover {
+      background-color: #e64a19;
+    }
+
+    @media (max-width: 600px) {
+      .buttons button {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    Odpowiedz na 3 pytania i odbierz próbkę o wartości 500 zł
+  </div>
+
+  <div class="overlay">
+    <div class="question" id="q1">
+      <p>🧺 Czy używasz płynu do płukania tkanin lub wzmacniacza zapachu podczas prania?</p>
+      <div class="buttons">
+        <button onclick="nextQuestion('q1')">Yes</button>
+        <button onclick="nextQuestion('q1')">No</button>
+      </div>
+    </div>
+
+    <div class="question" id="q2" style="display: none;">
+      <p>🌸  Czy próbowałaś kiedyś produktów Lenor?</p>
+      <div class="buttons">
+        <button onclick="nextQuestion('q2')">Yes</button>
+        <button onclick="nextQuestion('q2')">No</button>
+      </div>
+    </div>
+
+    <div class="question" id="q3" style="display: none;">
+      <p>❓ Czy znasz markę Lenor?</p>
+      <div class="buttons">
+        <button onclick="showThankYou()">Yes</button>
+        <button onclick="showThankYou()">No</button>
+      </div>
+    </div>
+
+    <div id="thankyou">
+      <p>🎉 Dziękujemy za Twoje odpowiedzi!</p>
+      <p>🎁 Twoja nagroda jest gotowa — kliknij poniżej, aby ją odebrać.</p>
+    </div>
+
+    <div id="cta">
+      <a href="https://dt-ssl.com/?a=169546&c=382934" onclick="fbq('track', 'Lead')">
+        LET'S GO → Odbierz próbkę 500 zł
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function nextQuestion(currentId) {
+      document.getElementById(currentId).style.display = 'none';
+      if (currentId === 'q1') {
+        document.getElementById('q2').style.display = 'block';
+      } else if (currentId === 'q2') {
+        document.getElementById('q3').style.display = 'block';
+      }
+    }
+
+    function showThankYou() {
+      document.getElementById('q3').style.display = 'none';
+      document.getElementById('thankyou').style.display = 'block';
+      document.getElementById('cta').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
